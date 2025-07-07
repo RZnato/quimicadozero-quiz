@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz: Modelo Atômico de Dalton</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        h1 { color: #003366; }
+        .question { margin-bottom: 20px; background: #fff; padding: 20px; border-radius: 8px; }
+        .question h3 { margin: 0; }
+        .result { margin-top: 20px; font-weight: bold; }
+        button { padding: 10px 20px; background-color: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #005fa3; }
+    </style>
+</head>
+<body>
+    <h1>Quiz: Modelo Atômico de Dalton</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            <h3>1. Segundo Dalton, os átomos são:</h3>
+            <label><input type="radio" name="q1" value="a"> Compostos por elétrons, prótons e nêutrons</label><br>
+            <label><input type="radio" name="q1" value="b"> Esferas maciças, indivisíveis e indestrutíveis</label><br>
+            <label><input type="radio" name="q1" value="c"> Formados por energia</label>
+        </div>
+
+        <div class="question">
+            <h3>2. Qual metáfora representa o modelo de Dalton?</h3>
+            <label><input type="radio" name="q2" value="a"> Pudim de passas</label><br>
+            <label><input type="radio" name="q2" value="b"> Nuvem eletrônica</label><br>
+            <label><input type="radio" name="q2" value="c"> Bola de bilhar</label>
+        </div>
+
+        <div class="question">
+            <h3>3. Qual é uma limitação do modelo de Dalton?</h3>
+            <label><input type="radio" name="q3" value="a"> Não explicou a existência de elementos químicos</label><br>
+            <label><input type="radio" name="q3" value="b"> Não considerava partículas subatômicas</label><br>
+            <label><input type="radio" name="q3" value="c"> Desconhecia a lei da conservação da massa</label>
+        </div>
+
+        <button type="button" onclick="verificarRespostas()">Ver resultado</button>
+    </form>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function verificarRespostas() {
+            let acertos = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === "b") acertos++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === "c") acertos++;
+            if (document.querySelector('input[name="q3"]:checked')?.value === "b") acertos++;
+            document.getElementById("resultado").innerText = `Você acertou ${acertos} de 3 questões.`;
+        }
+    </script>
+</body>
+</html>
